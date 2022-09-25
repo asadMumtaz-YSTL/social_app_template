@@ -3,7 +3,7 @@ import { StyleSheet, View, Text, TouchableOpacity } from 'react-native'
 import FastImage from "react-native-fast-image";
 import { Colors } from "../../../styles/colors";
 
-const Connstion = () => {
+const Chat_Follow_Share = () => {
     return (
         <View style={styles.connection}>
 
@@ -29,7 +29,7 @@ const Connstion = () => {
     )
 }
 
-export default Connstion
+export default Chat_Follow_Share
 
 const styles = StyleSheet.create({
     connection: {

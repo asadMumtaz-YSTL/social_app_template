@@ -1,14 +1,14 @@
 import React from "react";
-import { StyleSheet, View, Text, Image, TouchableOpacity } from 'react-native'
+import { StyleSheet, View, Text, } from 'react-native'
 import { Colors } from "../../../styles/colors";
 
-const Connstion = () => {
+const Connstion = ({ name, userName, ...props }) => {
     return (
         <View style={styles.userName}>
 
-            <Text style={[styles.name, styles.shadow]}>Malik Asad Mumtaz</Text>
+            <Text style={[styles.name, styles.shadow]}>{name}</Text>
 
-            <Text style={[styles.username, styles.shadow]}>@asadmumtaz92</Text>
+            <Text style={[styles.username, styles.shadow]}>@{userName}</Text>
 
         </View>
     )

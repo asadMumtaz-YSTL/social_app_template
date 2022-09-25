@@ -3,17 +3,20 @@ import { StyleSheet, View, Text, TouchableOpacity, ScrollView } from 'react-nati
 import FastImage from "react-native-fast-image";
 import { Colors } from "../../../styles/colors";
 import { FollowerData } from '../../ConstantData/FollowersData'
+import { useNavigation } from '@react-navigation/native';
 
-const Followers_Details = ({ following, followers, likes, navigation, ...props }) => {
+const MayYouKnow = ({ following, followers, likes, ...props }) => {
+
+    const navigation = useNavigation();
 
     return (
         <View style={styles.contanier}>
             <View style={styles.header}>
-                <Text style={styles.headingText}>Follower</Text>
+                <Text style={styles.headingText}>May you know!</Text>
 
                 <TouchableOpacity
                     activeOpacity={0.8}
-                // onPress={() => { navigation.navigate('myNetwork') }}
+                    onPress={() => { navigation.navigate('myNetwork') }}
                 >
                     <Text style={styles.seeAll}>See All</Text>
                 </TouchableOpacity>
@@ -38,33 +41,33 @@ const Followers_Details = ({ following, followers, likes, navigation, ...props }
     )
 }
 
-export default Followers_Details
+export default MayYouKnow
 
 const styles = StyleSheet.create({
     contanier: {
         flexDirection: 'column',
-        paddingVertical: 20,
+        paddingVertical: 10,
     },
     header: {
         justifyContent: 'space-between',
         paddingHorizontal: 20,
         flexDirection: 'row',
         alignItems: 'center',
-        height: 40
+        height: 40,
     },
     headingText: {
         color: Colors.black,
         alignSelf: 'center',
         textAlign: 'center',
+        letterSpacing: 0.4,
         fontWeight: '700',
-        letterSpacing: 1,
-        fontSize: 24,
+        fontSize: 22,
     },
     seeAll: {
         color: Colors.appBGColor,
         alignSelf: 'center',
         textAlign: 'center',
-        fontWeight: '500',
+        fontWeight: '600',
         letterSpacing: 1,
         fontSize: 16,
     },
@@ -77,9 +80,9 @@ const styles = StyleSheet.create({
         width: '100%',
     },
     follower_item: {
-        marginLeft: 15,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        marginLeft: 15,
     },
     image: {
         borderRadius: 30,

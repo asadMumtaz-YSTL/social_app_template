@@ -1,10 +1,10 @@
 import React from "react";
-import { StyleSheet, View, Text, ScrollView } from 'react-native'
+import { StyleSheet, View, Text, ScrollView, TouchableOpacity } from 'react-native'
 import FastImage from "react-native-fast-image";
 import { Colors } from "../../styles/colors";
 import { FollowerData } from '../ConstantData/FollowersData'
 
-const Followers = (props) => {
+const Followers = () => {
 
     return (
         <View style={styles.contanier}>
@@ -17,7 +17,12 @@ const Followers = (props) => {
                                 <FastImage source={item.profilePic} style={styles.image} />
                             </View>
 
-                            <Text style={styles.name}>{item.userName}</Text>
+                            <View style={{ flexDirection: 'row', justifyContent: 'space-between', flex: 1 }}>
+                                <Text style={styles.name}>{item.userName}</Text>
+                                <TouchableOpacity style={{ position: 'absolute', right: 20, }}>
+                                    <Text style={styles.menu}>...</Text>
+                                </TouchableOpacity>
+                            </View>
                         </View>
                     )
                 })}
@@ -38,6 +43,7 @@ const styles = StyleSheet.create({
         borderBottomColor: Colors.gray,
         flexDirection: 'row',
         borderBottomWidth: 1,
+        alignItems: 'center',
         alignSelf: 'center',
         marginVertical: 7,
         paddingBottom: 10,
@@ -52,10 +58,18 @@ const styles = StyleSheet.create({
         color: Colors.black,
         alignSelf: 'center',
         textAlign: 'center',
-        fontWeight: '500',
         fontWeight: '700',
         marginLeft: 15,
         fontSize: 16,
+    },
+    menu: {
+        color: Colors.black,
+        alignSelf: 'center',
+        textAlign: 'center',
+        fontWeight: '900',
+        marginTop: -5,
+        fontSize: 16,
+        padding: 5,
     },
     imageShadow: {
         shadowColor: "#000",

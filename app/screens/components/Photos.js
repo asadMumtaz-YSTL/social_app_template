@@ -1,18 +1,22 @@
 import React, { useState } from "react";
-import { StyleSheet, View, Text, TouchableOpacity, Dimensions, Modal } from 'react-native'
+import { StyleSheet, StatusBar, View, Text, TouchableOpacity, Dimensions, Modal, ActivityIndicator } from 'react-native'
 import FastImage from "react-native-fast-image";
 import { Colors } from "../../styles/colors";
 import { PHOTO_DATA } from '../ConstantData/PhotoData'
 
 const { width, height } = Dimensions.get('window')
 
-const Photos = ({ following, followers, likes, ...props }) => {
+const Photos = () => {
 
     const [modalVisible, setModalVisible] = useState(false);
     const [modalImage, setModalImage] = useState('');
+    const load = <ActivityIndicator size='' />
 
     return (
         <View style={styles.contanier}>
+
+            <StatusBar barStyle={modalVisible == false ? 'light-content' : 'dark-content'} />
+
             <View style={styles.header}>
                 <Text style={styles.headingText}>Photos</Text>
             </View>
@@ -21,13 +25,15 @@ const Photos = ({ following, followers, likes, ...props }) => {
                 {PHOTO_DATA.map((item) => {
                     return (
                         <TouchableOpacity activeOpacity={0.9}
-                            style={[styles.photo_item]} key={item.id}
+                            style={[styles.photo_item, styles.shadow]} key={item.id}
                             onPress={() => {
                                 setModalImage(item.image)
                                 setModalVisible(true)
                             }}
                         >
-                            <FastImage source={item.image} style={styles.image} resizeMode='cover' />
+                            <FastImage onLoad={() => {
+                                load
+                            }} source={item.image} style={styles.image} resizeMode='cover' />
                         </TouchableOpacity>
                     )
                 })}
@@ -47,7 +53,7 @@ const Photos = ({ following, followers, likes, ...props }) => {
                         <View style={styles.modalView}>
                             {/* CLOSE BTN */}
                             <TouchableOpacity
-                                style={{ position: 'absolute', right: 20, top: 20, zIndex: 2, borderRadius:16, overflow:'hidden' }}
+                                style={{ position: 'absolute', right: 20, top: 20, zIndex: 2, borderRadius: 16, overflow: 'hidden' }}
                                 onPress={() => {
                                     setModalVisible(!modalVisible);
                                 }}>
@@ -69,7 +75,7 @@ export default Photos
 
 const styles = StyleSheet.create({
     contanier: {
-        paddingVertical: 20,
+        paddingVertical: 10,
     },
     header: {
         justifyContent: 'space-between',
@@ -97,20 +103,29 @@ const styles = StyleSheet.create({
     photos: {
         justifyContent: 'space-between',
         flexDirection: 'row',
-        marginHorizontal: 16,
+        marginHorizontal: 8,
         alignItems: 'center',
         overflow: 'hidden',
         flexWrap: 'wrap',
-        marginTop: 1,
     },
-    photo_item: {
-        marginBottom: 10,
+    photo_item: { 
+        marginBottom: 15,
     },
     image: {
-        borderRadius: 20,
+        borderRadius: 6,
         height: ((Dimensions.get('window').width) / 2 - 25) * 1.5,
-        width: (Dimensions.get('window').width) / 2 - 25,
-        opacity: 0.8,
+        width: (Dimensions.get('window').width) / 2 - 13,
+        // opacity: 0.9,
+    },
+    shadow: {
+        shadowColor: '#000',
+        shadowOpacity: 0.50,
+        shadowOffset: {
+            width: 1,
+            height: 1,
+        },
+        shadowRadius: 2,
+        elevation: 2,
     },
 
     // FOR IMAGE MODAL

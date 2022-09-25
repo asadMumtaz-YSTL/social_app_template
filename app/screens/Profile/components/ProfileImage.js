@@ -7,7 +7,7 @@ const ProfileImage = () => {
     return (
         <TouchableOpacity style={[styles.profileImage, styles.shadow]} activeOpacity={0.99}
             onPress={() => {
-                Alert.alert('msg', 'You Want To Change Profile Photo!');
+                // Alert.alert('msg', 'You Want To Change Profile Photo!');
             }}
         >
             <FastImage source={require('../../../images/panda_love.png')} style={styles.image} resizeMode='contain' />

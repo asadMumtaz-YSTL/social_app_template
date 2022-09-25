@@ -8,13 +8,13 @@ import {
 } from 'react-native';
 import { Colors } from '../../styles/colors';
 
-import Header from './components/Header';
+import Header from './components/ProfileHeader';
 import ProfileImage from './components/ProfileImage';
-import Connstion from './components/Connection';
-import UserName from './components/UseeName'
-import Follow_Likes_Details from './components/Follow_Likes_Count'
-import Followers_Details from './components/Followers';
-import PHOTOS from '../components/Photos';
+import Chat_Follow_Share from './components/Chat_Follow_Share';
+import UserName from './components/UserName'
+import Network_Like_Count from './components/Network_Like_Count'
+import MayYouKnow from './components/MayYouKnow';
+import Photos from '../components/Photos';
 import BottomTab from '../../navigations/BottomTabNavigation';
 
 const { StatusBarManager } = NativeModules;
@@ -41,19 +41,17 @@ const Profile = (props) => {
                 <View style={styles.content}>
                     <ProfileImage image='' item='' />
 
-                    <UserName />
+                    <UserName name='Malik Asad Mumtaz' userName='asadmumtaz92' />
 
-                    <Connstion />
+                    <Chat_Follow_Share />
 
-                    <Follow_Likes_Details following='123' followers='5.56 K' likes='4.2 M' />
-
-                    <View style={styles.divider} />
-
-                    <Followers_Details />
+                    <Network_Like_Count following='123' followers='5.56 K' likes='4.2 M' />
 
                     <View style={styles.divider} />
+                    <MayYouKnow />
+                    <View style={styles.divider} />
 
-                    <PHOTOS />
+                    <Photos />
 
                 </View>
             </ScrollView>

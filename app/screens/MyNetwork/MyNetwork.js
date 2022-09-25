@@ -22,15 +22,15 @@ const MyNetwork = () => {
 
             <View style={styles.headingView}>
                 <TouchableOpacity activeOpacity={0.7} onPress={() => { setFollowr(true) }}
-                    style={[styles.link, { borderColor: isFollower ? Colors.appBGColor : '#e0e0e0' }]}
+                    style={[styles.link, { borderColor: isFollower ? Colors.white : Colors.appBGColor }]}
                 >
-                    <Text style={[styles.linkText, { color: isFollower ? Colors.appBGColor : Colors.black }]}>{`Followers`}</Text>
+                    <Text style={styles.linkText}>{`Followers`}</Text>
                 </TouchableOpacity>
 
                 <TouchableOpacity activeOpacity={0.7} onPress={() => { setFollowr(false) }}
-                    style={[styles.link, { borderColor: !isFollower ? Colors.appBGColor : '#e0e0e0' }]}
+                    style={[styles.link, { borderColor: !isFollower ? Colors.white : Colors.appBGColor }]}
                 >
-                    <Text style={[styles.linkText, { color: !isFollower ? Colors.appBGColor : Colors.black }]}>{`Following`}</Text>
+                    <Text style={styles.linkText}>{`Following`}</Text>
                 </TouchableOpacity>
             </View>
 
@@ -51,12 +51,13 @@ export default MyNetwork
 
 const styles = StyleSheet.create({
     vieBox: {
-        backgroundColor: '#f2f2f2',
-        flex: 1
+        backgroundColor: Colors.white,
+        flex: 1,
     },
     headingView: {
         justifyContent: 'space-between',
-        backgroundColor: '#e0e0e0',
+        // backgroundColor: '#e0e0e0',
+        backgroundColor:Colors.appBGColor,
         paddingHorizontal: 5,
         flexDirection: 'row',
         alignItems: 'center',
@@ -74,6 +75,7 @@ const styles = StyleSheet.create({
         height: 30,
     },
     linkText: {
+        color: Colors.white,
         textAlign: 'center',
         fontWeight: '700',
         fontSize: 18,

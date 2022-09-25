@@ -36,7 +36,7 @@ const App = () => {
                     headerTintColor: Colors.white,
                     contentStyle: { backgroundColor: Colors.white },
                 }}
-                initialRouteName={"home"}
+                initialRouteName={"login"}
                 >
                 <Stack.Screen
                     name="login"

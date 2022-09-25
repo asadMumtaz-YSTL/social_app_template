@@ -18,7 +18,7 @@ const myNetworkActive = require(`${link}/myNetworkActive.png`)
 import { useNavigation } from '@react-navigation/native';
 import { Colors } from '../styles/colors'
 
-const BottomTab = ({ index, ...props }) => {
+const BottomTab = ({ index }) => {
 
     const navigation = useNavigation();
 
