@@ -1,0 +1,51 @@
+export const Photos = [
+    {
+        id: 1,
+        image: require('../images/p1.jpg'),
+    }, {
+        id: 2,
+        image: require('../images/p2.jpeg'),
+    }, {
+        id: 3,
+        image: require('../images/p3.jpeg'),
+    }, {
+        id: 4,
+        image: require('../images/p4.jpeg'),
+    }, {
+        id: 5,
+        image: require('../images/p5.jpeg'),
+    }, {
+        id: 6,
+        image: require('../images/p6.png'),
+    }, {
+        id: 7,
+        image: require('../images/p7.png'),
+    }, {
+        id: 8,
+        image: require('../images/p8.jpg'),
+    }, {
+        id: 9,
+        image: require('../images/p1.jpg'),
+    }, {
+        id: 10,
+        image: require('../images/p2.jpeg'),
+    }, {
+        id: 11,
+        image: require('../images/p3.jpeg'),
+    }, {
+        id: 12,
+        image: require('../images/p4.jpeg'),
+    }, {
+        id: 13,
+        image: require('../images/p5.jpeg'),
+    }, {
+        id: 14,
+        image: require('../images/p6.png'),
+    }, {
+        id: 15,
+        image: require('../images/p7.png'),
+    }, {
+        id: 16,
+        image: require('../images/p8.jpg'),
+    },
+]
